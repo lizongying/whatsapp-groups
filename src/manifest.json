@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Whatsapp Group",
+  "version": "0.1.0",
+  "description": "Join many whatsapp groups in bulk",
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "permissions": [
+    "<all_urls>",
+    "storage",
+    "clipboardRead",
+    "clipboardWrite"
+  ],
+  "browser_action": {
+    "default_title": "Whatsapp Group",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
