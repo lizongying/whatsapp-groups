@@ -49,7 +49,8 @@ module.exports = {
             inject: true,
             filename: 'popup.html',
             template: './src/popup.html',
-            title: 'Super Music',
+            chunks: ['popup'],
+            title: 'Whatsapp Group',
             minify: {
                 collapseBooleanAttributes: true,
                 collapseWhitespace: true,

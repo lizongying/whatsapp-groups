@@ -1,7 +1,7 @@
 {
-  "name": "whatsapp-group",
+  "name": "whatsapp-groups",
   "version": "1.0.0",
-  "description": "whatsapp group",
+  "description": "whatsapp groups",
   "main": "index.js",
   "dependencies": {
     "jquery": "^3.3.1"
@@ -26,6 +26,6 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git@github.com:lizongying/whatsapp-group.git"
+    "url": "git@github.com:lizongying/whatsapp-groups.git"
   }
 }

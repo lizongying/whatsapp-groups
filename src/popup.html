@@ -2,14 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Whatsapp Group</title>
+    <title>Whatsapp Groups</title>
 </head>
 <body>
 <div>
-    <div id="show-content"></div>
-    <textarea id="content" placeholder="Content"></textarea>
+    <label>Whether to send an image.</label>
+    <div class="form-field">
+        <input id="is-image-yes" name="is-image" type="radio" value="1" checked>Yes
+        <input id="is-image-no" name="is-image" type="radio" value="0">No
+    </div>
     <br>
-    <button id="ok" type="button">OK</button>
+    <label>Whether to delete the group after join.</label>
+    <div class="form-field">
+        <input id="is-delete-yes" name="is-delete" type="radio" value="1" checked>Yes
+        <input id="is-delete-no" name="is-delete" type="radio" value="0">No
+    </div>
+    <br>
+    <label>Image link, You should create a link on <a href="https://giphy.com/upload" target="_blank">https://giphy.com/upload</a>.
+        Example: "https://media.giphy.com/media/5eFQVUYlv9UPFLLDVk/giphy.gif"</label>
+    <div class="form-field">
+        <textarea id="image-link" placeholder="Image link"></textarea>
+    </div>
+    <br>
+    <label>Content. Support URL</label>
+    <div class="form-field">
+        <textarea id="content" placeholder="Content"></textarea>
+    </div>
+    <br>
+    <label>Groups. Separated by ', ', Groups link's content is also.</label>
+    <div class="form-field">
+        <textarea id="groups" placeholder="[Group]"></textarea>
+    </div>
+    <br>
+    <label>Groups link. You must choose only one in the "Groups" and "Groups link". No full address is required.
+        Example: "https://example.com/groups/<S>&lt;my phone&gt;</S>"</label>
+    <div class="form-field">
+        <textarea id="groups-link" placeholder="Groups link"></textarea>
+    </div>
+    <br>
+    <div class="form-field">
+        <div>Is message: <span id="is-message"></span></div>
+        <div>Groups count: <span id="groups-count"></span></div>
+        <div>Groups index: <span id="groups-index"></span></div>
+        <div>Last phone: <span id="last-phone"></span></div>
+        <p>If you want to join only groups, please click "Join Groups". Or, join groups and send message, please click
+            "Groups Message".</p>
+    </div>
+    <div class="form-field">
+        <button id="set" class="btn" type="button">Confirm Setting</button>
+    </div>
 </div>
 </body>
 </html>

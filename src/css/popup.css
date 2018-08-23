@@ -4,7 +4,10 @@ html, body {
     width: 25rem;
 }
 
-#content, #show-content {
+.form-field textarea {
     width: 100%;
-    height: 5rem;
+}
+
+.btn {
+    cursor: pointer;
 }
