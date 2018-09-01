@@ -6,7 +6,8 @@ window.whatsapp = {
     content: 'StarMaker appeal to our users and the public to #StandWithKerala/Kodagu. Donate for Kerala and Kodagu to spread your love, write down your best wishes for the people who are waiting for rescue. As long as everyone give a little love, we can light up the darkest time of the country.\n' +
     '👇👇👇👇👇👇👇👇\n' +
     'https://m.starmakerstudios.com/t?promotion_id=1153&showBar=1&showNavigation=true&new=true',
-    groupsLink: 'https://m1res-1256122840.cos.ap-mumbai.myqcloud.com/whatsapp_group/',
+    // groupsLink: 'https://m1res-1256122840.cos.ap-mumbai.myqcloud.com/whatsapp_group/',
+    groupsLink: 'http://songbook.ushow.media/whatsapp/obtain/0/0/',
     groups: [],
     groupsIndex: 0,
     lastPhone: 0,

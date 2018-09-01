@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Whatsapp Groups",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Join many whatsapp groups and send messages in bulk",
   "content_security_policy": "script-src 'self'; object-src 'self'",
   "permissions": [
@@ -14,6 +14,7 @@
     "default_title": "Whatsapp Groups",
     "default_popup": "popup.html"
   },
+  "options_page": "options.html",
   "background": {
     "scripts": [
       "background.js"

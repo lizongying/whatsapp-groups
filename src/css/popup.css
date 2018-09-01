@@ -2,12 +2,58 @@ html, body {
     margin: 0;
     height: 37.5rem;
     width: 25rem;
+    background-color: #dfdfdf;
+    background-image: linear-gradient(to bottom, #dddbd1, #d2dbdc);
+}
+
+.main {
+    margin: 1rem;
 }
 
 .form-field textarea {
     width: 100%;
 }
 
+input, button, select, textarea {
+    outline: none;
+    border: 0;
+    border-radius: 3px;
+    transition: box-shadow .18s ease-out, background .18s ease-out, color .18s ease-out;
+}
+
+textarea {
+    resize: none;
+}
+
 .btn {
     cursor: pointer;
+    background-color: #08c65b;
+    color: white;
+    padding: 10px 24px;
+    vertical-align: baseline;
+    margin: 0;
+}
+
+.title {
+    margin-top: -1rem;
+    height: 2rem;
+    line-height: 2rem;
+    color: white;
+    text-align: center;
+    background-color: #009688;
+}
+
+#is-message, #groups-count, #groups-index, #last-phone {
+    background-color: #09d261;
+    border-radius: 12px;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    height: 19px;
+    line-height: 20px;
+    min-width: 9px;
+    vertical-align: top;
 }
