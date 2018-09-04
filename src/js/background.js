@@ -60,3 +60,7 @@ const get_groups = (url) => {
     xhr.open('GET', url, true);
     xhr.send();
 };
+
+const set_badge = (text) => {
+    chrome.browserAction.setBadgeText(text);
+};

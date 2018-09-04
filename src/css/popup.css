@@ -43,7 +43,7 @@ textarea {
     background-color: #009688;
 }
 
-#is-message, #groups-count, #groups-index, #last-phone {
+#is-message, #groups-count, #last-phone {
     background-color: #09d261;
     border-radius: 12px;
     padding: 0px 5px 0px 5px;

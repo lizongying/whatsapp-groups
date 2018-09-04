@@ -51,7 +51,6 @@ $(() => {
         }
         $('#is-message').html(whatsapp.isMessage ? 'Yes' : 'No');
         $('#groups-count').html(whatsapp.groups.length);
-        $('#groups-index').html(whatsapp.groupsIndex);
         $('#last-phone').html(whatsapp.lastPhone);
     };
     setInterval(show, 10)
