@@ -1,6 +1,13 @@
 import '../css/content.css'
 
 $(() => {
+    chrome.runtime.onMessage.addListener(
+        (request, sender, sendResponse) => {
+            if (request['groups']) {
+                groups = request['groups'];
+            }
+            setTimeout(addGroup, 0);
+        });
     let imageLinkHtml = '';
     let contentHtml = '';
     let sendImageInterval = 0;
@@ -23,16 +30,16 @@ $(() => {
     };
     const sendBegin = () => {
         $('._35EW6').click();
-        setTimeout(getUser, 1000)
+        setTimeout(getUser, 2000)
     };
     const sendImageBegin = () => {
         $('._3hV1n').click();
-        setTimeout(getUser, 5000)
+        setTimeout(getUser, 8000)
     };
     const sendImageContent = () => {
         const text = $('._2S1VP');
         const now = new Date().getTime();
-        if (text.length < 2 && now - sendImageContentsendTime < 5000) {
+        if (text.length < 2 && now - sendImageContentsendTime < 8000) {
             return
         }
         clearInterval(sendImageContentInterval);
@@ -65,6 +72,17 @@ $(() => {
         sendImageContentsendTime = new Date().getTime();
         sendImageContentInterval = setInterval(sendImageContent, 10);
     };
+    const sendContent = () => {
+        chrome.runtime.sendMessage('content', (response) => {
+            contentHtml = response.data;
+            if (contentHtml) {
+                document.execCommand('insertHTML', false, contentHtml);
+                setTimeout(sendBegin, 1000);
+            } else {
+                alert('no content')
+            }
+        });
+    };
     const sendMessage = () => {
         const text = $('._2S1VP');
         if (!text.length) {
@@ -76,14 +94,14 @@ $(() => {
             if (response.data) {
                 chrome.runtime.sendMessage('imageLink', (response) => {
                     imageLinkHtml = response.data;
-                    sendImageInterval = setInterval(sendImage, 10);
+                    if (imageLinkHtml) {
+                        sendImageInterval = setInterval(sendImage, 10);
+                    } else {
+                        setTimeout(sendContent, 0);
+                    }
                 });
             } else {
-                chrome.runtime.sendMessage('content', (response) => {
-                    contentHtml = response.data;
-                    document.execCommand('insertHTML', false, contentHtml);
-                    setTimeout(sendBegin, 1000);
-                });
+                setTimeout(sendContent, 0);
             }
         });
     };
@@ -97,7 +115,7 @@ $(() => {
         sureBtn[0].click();
         chrome.runtime.sendMessage('isMessage', (response) => {
             if (response.data) {
-                setTimeout(sendMessage, 500);
+                setTimeout(sendMessage, 1000);
             } else {
                 setTimeout(getUser, 0);
             }
@@ -108,12 +126,12 @@ $(() => {
             const groupsIndex = response.data;
             if (groupsIndex > groups.length - 1) {
                 chrome.runtime.sendMessage({groupsIndex: 0});
-                chrome.runtime.sendMessage(['set_badge', {text: ''}]);
+                chrome.runtime.sendMessage(['setBadge', {text: ''}]);
                 alert('finished');
                 return;
             }
             chrome.runtime.sendMessage({groupsIndex: groupsIndex + 1});
-            chrome.runtime.sendMessage(['set_badge', {text: '' + (groupsIndex + 1)}]);
+            chrome.runtime.sendMessage(['setBadge', {text: '' + (groupsIndex + 1)}]);
             location = 'https://web.whatsapp.com/accept?code=' + groups[groupsIndex];
         });
     };
@@ -131,7 +149,7 @@ $(() => {
                     return
                 }
                 const groupUrl = response.data + phone;
-                chrome.runtime.sendMessage(['get_groups', groupUrl]);
+                chrome.runtime.sendMessage(['getGroups', groupUrl]);
             });
         });
     };
@@ -158,14 +176,6 @@ $(() => {
     });
     setInterval(setBtn, 10);
     const sureBtnInterval = setInterval(sureBtn, 10);
-    chrome.runtime.onMessage.addListener(
-        (request, sender, sendResponse) => {
-            if (request['groups']) {
-                groups = request['groups'];
-                console.log('groups', groups);
-            }
-            setTimeout(addGroup, 0);
-        });
 });
 
 
