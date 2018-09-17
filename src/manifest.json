@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Whatsapp Groups",
-  "version": "0.1.7",
+  "version": "0.1.9",
   "description": "Join many whatsapp groups and send messages in bulk",
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "permissions": [
