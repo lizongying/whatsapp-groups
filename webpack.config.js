@@ -17,6 +17,19 @@ module.exports = {
         options: './src/js/options',
         content: './src/js/content',
         background: './src/js/background',
+        hook: [
+            './src/js/inject/WebSocketInterception',
+            './src/js/inject/BinaryReader',
+            './src/js/inject/BinaryWriter',
+            './src/js/inject/Crypto',
+            './src/js/inject/Main',
+            './src/js/inject/MessageParser',
+            './src/js/inject/MessageTypes',
+            './src/js/inject/NodePacker',
+            './src/js/inject/NodeParser',
+            './src/js/inject/WAPacket',
+        ],
+        inject: './src/js/inject',
     },
     module: {
         rules: [
