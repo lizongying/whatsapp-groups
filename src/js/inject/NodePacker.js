@@ -59,6 +59,8 @@ function NodePacker() {
         e.doubleByte[t] && (n[e.doubleByte[t]] = t + p.SINGLE_BYTE_MAX);
     this.writeNode = function (e, t) {
         if (t) {
+            console.log('t', t);
+            console.log('tl', t.length);
             if (3 !== t.length)
                 throw new Error("invalid node");
             var n = 0;
@@ -74,6 +76,7 @@ function NodePacker() {
                 n = 2 * counter;
             }
             this.writeListStart(e, 1 + n + (t[2] ? 1 : 0)),
+                console.log(t);
                 this.writeString(e, t[0]),
                 this.writeAttributes(e, t[1]),
                 this.writeChildren(e, t[2])
@@ -158,9 +161,11 @@ function NodePacker() {
         }
         ,
         this.writeAttributes = function (e, t) {
+            console.log('ta', t);
             if (t)
                 for (var n in t)
                     t[n] && (this.writeString(e, n),
+                        console.log('tn',t[n]),
                         this.writeString(e, t[n]))
         }
         ,
@@ -270,3 +275,5 @@ function NodePacker() {
             }
         }
 }
+
+window.NodePacker = NodePacker;

@@ -4,7 +4,7 @@
 var readConfirmationsHookEnabled = true;
 var presenceUpdatesHookEnabled = true;
 var safetyDelay = 0;
-var WAdebugMode = true;
+var WAdebugMode = false;
 var isInitializing = true;
 var exceptionsList = [];
 var blinkingChats = {};
@@ -78,6 +78,17 @@ wsHook.after = function(messageEvent, url)
 	}
 }
 
+
+document.addEventListener('wwwww', function (e) {
+    console.log(222);
+    console.log(e);
+    var startNode = ["query","invite","55ETwi217XsLeTZvgfm7rD"];
+    // var startNode = ["action","invite","2uf9q3KTBEFAG6J3VxHHC3"];
+    // WACrypto.sendNode(startNode);});
+	console.log(wsHook);
+	wsHook._send(startNode);
+	console.log('1111111');
+})
 
 document.addEventListener('onIncognitoOptionsClosed', function(e)
 {	

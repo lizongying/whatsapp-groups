@@ -175,7 +175,13 @@ $(() => {
         setTimeout(getUser, 0);
     });
     setInterval(setBtn, 10);
-    const sureBtnInterval = setInterval(sureBtn, 10);
+    // const sureBtnInterval = setInterval(sureBtn, 10);
+
+    const  a = ()=>{
+        document.dispatchEvent(new CustomEvent('wwwww', {detail: true}));
+
+    };
+    setTimeout(a, 3000);
 });
 
 
