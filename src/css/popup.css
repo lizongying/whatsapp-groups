@@ -6,14 +6,6 @@ html, body {
     background-image: linear-gradient(to bottom, #dddbd1, #d2dbdc);
 }
 
-.main {
-    margin: 1rem;
-}
-
-.form-field textarea {
-    width: 100%;
-}
-
 input, button, select, textarea {
     outline: none;
     border: 0;
@@ -21,8 +13,13 @@ input, button, select, textarea {
     transition: box-shadow .18s ease-out, background .18s ease-out, color .18s ease-out;
 }
 
-textarea {
+input, textarea {
+    width: 100%;
     resize: none;
+}
+
+.main {
+    margin: 1rem;
 }
 
 .btn {
@@ -43,7 +40,7 @@ textarea {
     background-color: #009688;
 }
 
-#is-message, #groups-count, #last-phone {
+.show {
     background-color: #09d261;
     border-radius: 12px;
     padding: 0 5px;

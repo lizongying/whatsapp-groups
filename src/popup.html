@@ -9,42 +9,49 @@
     <h4>Whatsapp Groups</h4>
 </div>
 <div id="main" class="main">
-    <label>Whether to send an image.</label>
+    <label>Media link or base64 string, You can create an image link on <a href="https://giphy.com/create/gifmaker" target="_blank">giphy.com</a></label>
     <div class="form-field">
-        <input id="is-image-yes" name="is-image" type="radio" value="1" checked>Yes
-        <input id="is-image-no" name="is-image" type="radio" value="0">No
+        <textarea id="media" placeholder="https://media.giphy.com/... data:image/jpeg;base64,/..."></textarea>
     </div>
     <br>
-    <label>Whether to delete the group after join.</label>
+    <label>Content. Url must be start with "http://" or "https://"</label>
     <div class="form-field">
-        <input id="is-delete-yes" name="is-delete" type="radio" value="1" checked>Yes
-        <input id="is-delete-no" name="is-delete" type="radio" value="0">No
+        <textarea id="content" placeholder="Content @Phone"></textarea>
     </div>
     <br>
-    <label>Image link, You should create a image link on <a href="https://giphy.com/create/gifmaker" target="_blank">giphy.com</a></label>
-    <div class="form-field">
-        <textarea id="image-link" placeholder="Image link. Example: https://media.giphy.com/media/5eFQVUYlv9UPFLLDVk/giphy.gif"></textarea>
-    </div>
-    <br>
-    <label>Content. Support URL.</label>
-    <div class="form-field">
-        <textarea id="content" placeholder="Content"></textarea>
-    </div>
-    <br>
-    <label>Groups. Separated by ', ', Groups link's content is also.</label>
+    <label>Groups. Separated by ', '.</label>
     <div class="form-field">
         <textarea id="groups" placeholder="[Group]"></textarea>
     </div>
     <br>
-    <label>Groups link. If the "Groups" is empty. It must be "https".</label>
+    <label>Groups link.</label>
     <div class="form-field">
         <textarea id="groups-link" placeholder="Groups link. Example: https://example.com/groups/"></textarea>
     </div>
     <br>
+    <label>Send interval</label>
     <div class="form-field">
-        <div>Is message: <span id="is-message"></span></div>
-        <div>Groups count: <span id="groups-count"></span></div>
-        <div>Last phone: <span id="last-phone"></span></div>
+        <input id="send-interval" placeholder="seconds" type="number" value="300" />
+    </div>
+    <br>
+    <label>Groups interval</label>
+    <div class="form-field">
+        <input id="groups-interval" placeholder="seconds" type="number" value="300" />
+    </div>
+    <br>
+    <label>Name</label>
+    <div class="form-field">
+        <input id="name" placeholder="name" type="text" value="" />
+    </div>
+    <br>
+    <label>Status</label>
+    <div class="form-field">
+        <input id="status" placeholder="status" type="text" value="" />
+    </div>
+    <br>
+    <div class="form-field">
+        <div>Groups count: <span id="groups-count" class="show"></span></div>
+        <div>Last phone: <span id="last-phone" class="show"></span></div>
     </div>
     <br>
     <div class="form-field">
