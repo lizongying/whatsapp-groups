@@ -10,7 +10,7 @@ module.exports = {
         publicPath: '/',
         filename: '[name].js',
         chunkFilename: '[name].chunk.js',
-        path: path.join(__dirname, './dist')
+        path: path.join(__dirname, './dist'),
     },
     entry: {
         popup: './src/js/popup',
@@ -24,8 +24,8 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     'style-loader',
-                    'css-loader'
-                ]
+                    'css-loader',
+                ],
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
@@ -33,17 +33,17 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            outputPath: 'images'
-                        }
-                    }
-                ]
+                            outputPath: 'images',
+                        },
+                    },
+                ],
             },
-        ]
+        ],
     },
     plugins: [
         new webpack.ProvidePlugin({
             $: 'jquery',
-            jQuery: 'jquery'
+            jQuery: 'jquery',
         }),
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
@@ -96,11 +96,13 @@ module.exports = {
                 useShortDoctype: true,
             },
         }),
-        new CopyWebpackPlugin([
-            {
-                from: './src/manifest.json',
-                to: path.join(__dirname, './dist/manifest.json'),
-            },
-        ]),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: './src/manifest.json',
+                    to: path.join(__dirname, './dist/manifest.json'),
+                },
+            ],
+        }),
     ],
 };
